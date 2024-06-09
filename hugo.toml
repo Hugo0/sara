@@ -11,7 +11,7 @@ googleAnalytics = "G-xxxxxxxxx"
 
 [params]
 # Meta description
-description = "A Tech Blog"
+description = "A Lawyers Blog"
 
 # Appearance settings
 theme = 'auto'
@@ -19,9 +19,7 @@ theme = 'auto'
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-I am an Italian Software Engineer with a strong foundation in computer science and a passion for solving complex problems.
-I am interested in a range of topics, including algorithms, distributed systems, databases, and information retrieval.
-"""
+I am Sara Perestrelo and I am cool"""
 
 # Collection to display on home
 homeCollectionTitle = 'Posts'
