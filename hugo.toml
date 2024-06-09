@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My website'
+title = 'Sara Perestrelo'
 theme = 'Typo'
 
 [taxonomies]
@@ -36,14 +36,14 @@ breadcrumbs = true
 # Social icons
 [[params.social]]
 name = "linkedin"
-url = "https://www.linkedin.com/in/user/"
+url = "https://www.linkedin.com/in/sara-perestrelo-da-silva-416904286"
 
 [[params.social]]
-name = "medium"
-url = "https://medium.com/@user"
+name = "twitter"
+url = "https://x.com/@unichicsara"
 
 [[params.social]]
-name = "github"
+name = "instagram"
 url = "https://github.com/user"
 
 # Main menu pages
