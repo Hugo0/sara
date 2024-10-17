@@ -124,30 +124,3 @@ This will create a new page at `content/about.md`.
 1. To override theme templates, copy the file you want to modify from `themes/Typo/layouts/` to your site's `layouts/` directory.
 2. Edit the copied file to make your changes.
 3. Hugo will use your custom version instead of the theme's version.
-
-## Deployment
-
-This site is set up to deploy automatically when changes are pushed to the main branch. The deployment process is handled by GitHub Actions.
-
-To manually trigger a deployment:
-
-1. Commit your changes and push to the main branch:
-
-   ```
-   git add .
-   git commit -m "Update site content"
-   git push origin main
-   ```
-
-2. The GitHub Actions workflow will automatically build and deploy the site.
-
-## Troubleshooting
-
-If you encounter any issues:
-
-1. Ensure Hugo is installed correctly and is the extended version.
-2. Check that all theme files are present in the `themes/Typo/` directory.
-3. Verify that your content files are in the correct locations.
-4. Run `hugo --verbose` to get more detailed output for debugging.
-
-For more help, consult the [Hugo documentation](https://gohugo.io/documentation/) or open an issue in this repository.

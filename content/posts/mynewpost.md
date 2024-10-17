@@ -10,6 +10,8 @@ categories = ['General']
 
 Hello, and welcome to my blog! This is my very first post, and I'm excited to share my thoughts and experiences with you.
 
+![Test Image](/images/test_image.png)
+
 ## Introduction
 
 In this post, I'll be discussing:
