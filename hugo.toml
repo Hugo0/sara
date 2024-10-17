@@ -42,9 +42,6 @@ url = "https://www.linkedin.com/in/sara-perestrelo-da-silva-416904286"
 name = "twitter"
 url = "https://x.com/@unichicsara"
 
-[[params.social]]
-name = "instagram"
-url = "https://instagram.com/saraa.perestrelo"
 
 # Main menu pages
 [[params.menu]]
