@@ -19,7 +19,7 @@ theme = 'auto'
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-This is the personal website of Sara Perestrelo, a future lawyer that also likes to code. I will soon add posts and updates here!"""
+This is the personal website of Sara Perestrelo. I will soon add posts and updates here!"""
 
 # Collection to display on home
 homeCollectionTitle = 'Posts'

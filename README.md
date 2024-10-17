@@ -40,11 +40,43 @@ The `-D` flag includes draft content. Hugo will watch for changes and automatica
 
 To create a new blog post:
 
-```
-hugo new content posts/my-new-post.md
-```
+1. Use the Hugo command to generate a new post file:
 
-This will create a new Markdown file in the `content/posts/` directory with some default front matter.
+   ```
+   hugo new content posts/my-new-post.md
+   ```
+
+   This will create a new Markdown file in the `content/posts/` directory with some default front matter.
+
+2. Open the newly created file (e.g., `content/posts/my-new-post.md`) in your preferred text editor.
+
+3. Edit the front matter at the top of the file. It will look something like this:
+
+   ```yaml
+   +++
+   title = 'My New Post'
+   date = 2023-07-14T12:34:56+01:00
+   draft = true
+   +++
+   ```
+
+   Modify the title as needed, and set `draft = false` when you're ready to publish.
+
+4. Write your blog post content below the front matter using Markdown syntax.
+
+5. Save the file.
+
+6. Run `hugo server` to preview your site locally and ensure the new post appears as expected.
+
+7. When you're satisfied with your post, commit the new file to your Git repository and push it to GitHub:
+
+   ```
+   git add content/posts/my-new-post.md
+   git commit -m "Add new blog post: My New Post"
+   git push origin main
+   ```
+
+8. The GitHub Actions workflow will automatically build and deploy your updated site.
 
 ## Editing Content
 
