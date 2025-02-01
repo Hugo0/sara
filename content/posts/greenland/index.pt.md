@@ -1,7 +1,7 @@
 +++
 title = 'Gronelândia'
 date = 2025-02-01T16:00:00+01:00
-draft = false
+draft = true
 tags = ['geopolitica', 'direito-internacional', 'eua', 'gronelandia']
 giscus_term = "greenland-20240201"
 +++

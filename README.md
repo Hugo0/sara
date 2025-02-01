@@ -72,3 +72,9 @@ To run this website locally for development:
 ## Deployment
 
 The site is automatically deployed on [Render](https://render.com) to [saraperestrelo.com](https://saraperestrelo.com) when changes are pushed to the main branch.
+
+## Other stuff
+
+https://buttondown.com/subscribers
+https://analytics.google.com/analytics/web/#/p475804602/reports/intelligenthome
+https://giscus.app/
