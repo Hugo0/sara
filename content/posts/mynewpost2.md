@@ -1,7 +1,7 @@
 +++
 title = 'Mynewpost2'
 date = 2024-10-17T10:59:55+01:00
-draft = false
+draft = true
 tags = ['blog']
 giscus_term = "second-post-20241017"  # Unique identifier for comments
 +++

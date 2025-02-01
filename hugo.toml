@@ -23,6 +23,7 @@ description = "A Lawyers Blog"
 
 # Appearance settings
 theme = 'auto'
+favicon = "/favicon.svg"
 
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
@@ -53,6 +54,10 @@ url = "https://x.com/@unichicsara"
 [[params.social]]
 name = "email"
 url = "mailto:contact@saraperestrelo.com"
+
+[[params.social]]
+name = "rss"
+url = "/feed.xml"
 
 # Main menu pages
 [[params.menu]]
@@ -85,3 +90,13 @@ category = "General"
 categoryid = "DIC_kwDOMHEAl84Cmid2"
 mapping = "specific"
 theme = "preferred_color_scheme"
+
+# RSS Feed
+[outputs]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+mediatype = "application/rss+xml"
+baseName = "feed"

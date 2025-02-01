@@ -1,7 +1,7 @@
 +++
 title = 'My First Blog Post'
 date = 2024-10-17T10:56:10+01:00
-draft = false
+draft = true
 tags = ['blog', 'first post']
 categories = ['General']
 giscus_term = "first-post-20241017"  # Unique identifier for comments

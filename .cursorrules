@@ -25,3 +25,8 @@ IMPORTANT CONTEXT:
    - Only blog posts can be bilingual
    - Posts are in content/posts/ directory
    - Each bilingual post has its own directory with language-specific files
+
+
+Other things to keep in mind:
+- css should be in css file, not inline if possible
+- maintain good code practices at all times
