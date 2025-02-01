@@ -1,0 +1,12 @@
+{{ $showBreadcrumbs := default true .Site.Params.showBreadcrumbs }} {{ if
+$showBreadcrumbs }}
+<nav class="breadcrumbs">
+  <div class="breadcrumbs-list">
+    <a href="/">Home</a> &gt; {{ if .Parent }} {{ if not .Parent.IsHome }}
+    <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a> &gt; {{ end }}
+    {{ end }}
+    <span class="current">{{ .Title }}</span>
+  </div>
+  {{ partial "language-switcher.html" . }}
+</nav>
+{{ end }}

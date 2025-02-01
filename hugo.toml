@@ -1,13 +1,21 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://saraperestrelo.com'
 languageCode = 'en-us'
 title = 'Sara Perestrelo'
 theme = 'Typo'
+
+[languages]
+  [languages.en]
+    contentDir = 'content'
+    weight = 1
+  [languages.pt]
+    contentDir = 'content'
+    weight = 2
 
 [taxonomies]
 tag = 'tags'
 
 # Google analytics code
-googleAnalytics = "G-xxxxxxxxx"
+googleAnalytics = "G-N09T510QBN"
 
 [params]
 # Meta description
@@ -15,11 +23,12 @@ description = "A Lawyers Blog"
 
 # Appearance settings
 theme = 'auto'
+favicon = "/favicon.svg"
 
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
 homeIntroContent = """
-This is the personal website of Sara Perestrelo. I will soon add posts and updates here!"""
+Welcome. My main interests lie at the intersection of law and technology"""
 
 # Collection to display on home
 homeCollectionTitle = 'Posts'
@@ -27,7 +36,7 @@ homeCollection = 'posts'
 
 # Lists parameters
 paginationSize = 100
-listSummaries = true
+listSummaries = false
 listDateFormat = '2 Jan 2006'
 
 # Breadcrumbs
@@ -42,6 +51,13 @@ url = "https://www.linkedin.com/in/sara-perestrelo-da-silva-416904286"
 name = "twitter"
 url = "https://x.com/@unichicsara"
 
+[[params.social]]
+name = "email"
+url = "mailto:contact@saraperestrelo.com"
+
+[[params.social]]
+name = "rss"
+url = "/feed.xml"
 
 # Main menu pages
 [[params.menu]]
@@ -51,6 +67,10 @@ url = "/"
 [[params.menu]]
 name = "posts"
 url = "/posts"
+
+[[params.menu]]
+name = "poems"
+url = "/poems"
 
 [[params.menu]]
 name = "about"
@@ -63,10 +83,20 @@ style = 'algol'
 
 # Giscus comments
 [params.giscus]
-enable = false
-repo = "user/repo"
-repoid = "repoId"
+enable = true
+repo = "hugo0/sara"
+repoid = "R_kgDOMHEAlw"
 category = "General"
-categoryid = "categoryId"
-mapping = "pathname"
+categoryid = "DIC_kwDOMHEAl84Cmid2"
+mapping = "specific"
 theme = "preferred_color_scheme"
+
+# RSS Feed
+[outputs]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+mediatype = "application/rss+xml"
+baseName = "feed"

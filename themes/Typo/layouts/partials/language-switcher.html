@@ -1,0 +1,20 @@
+{{ if and .IsTranslated (eq .Kind "page") }}
+<nav class="language-switcher" aria-label="Language switcher">
+    {{ $currentLang := .Lang }}
+    <span class="language-option">
+        <a 
+            href="{{ cond (eq $currentLang "en") "#" (index .Translations 0).RelPermalink }}"
+            class="language-link{{ if eq $currentLang "en" }} active{{ end }}"
+            hreflang="en"
+            lang="en"
+        >EN</a>
+        <span class="language-separator">/</span>
+        <a 
+            href="{{ cond (eq $currentLang "pt") "#" (index .Translations 0).RelPermalink }}"
+            class="language-link{{ if eq $currentLang "pt" }} active{{ end }}"
+            hreflang="pt"
+            lang="pt"
+        >PT</a>
+    </span>
+</nav>
+{{ end }}

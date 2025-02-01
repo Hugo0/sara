@@ -1,0 +1,51 @@
+<div class="newsletter-container">
+  <p class="newsletter-text">
+    {{- if eq .Site.Language.Lang "pt" -}} Gosta do que lê?
+    <button class="text-button newsletter-trigger">Subscreva aqui</button> para
+    ser notificado quando publicar {{- else -}} Like my writing?
+    <button class="text-button newsletter-trigger">Subscribe</button> to get
+    notified next time I post {{- end -}}
+  </p>
+  <div class="newsletter-form-container">
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/sarap"
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/sarap', 'popupwindow')"
+      class="newsletter-form"
+    >
+      <input type="email" name="email" id="bd-email" placeholder="{{- if eq
+      .Site.Language.Lang "pt" -}}seu@email.com{{- else -}}your@email.com{{- end
+      -}}" required />
+      <button type="submit" class="submit-button">
+        {{- if eq .Site.Language.Lang "pt" -}}Subscrever{{- else -}}Subscribe{{-
+        end -}}
+      </button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const trigger = document.querySelector(".newsletter-trigger");
+    const container = document.querySelector(".newsletter-container");
+    const text = document.querySelector(".newsletter-text");
+    const form = document.querySelector(".newsletter-form-container");
+
+    trigger.addEventListener("click", function () {
+      text.style.display = "none";
+      form.style.display = "block";
+      form.querySelector("input").focus();
+    });
+
+    document
+      .querySelector(".newsletter-form")
+      .addEventListener("submit", function (e) {
+        container.classList.add("subscribed");
+        setTimeout(() => {
+          text.style.display = "block";
+          form.style.display = "none";
+        }, 2000);
+      });
+  });
+</script>
