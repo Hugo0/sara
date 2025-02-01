@@ -1,0 +1,113 @@
+{{ define "main" }}
+
+{{ .Content }}
+
+{{/* Intro summary section */}}
+
+{{ if or .Site.Params.homeIntroTitle .Site.Params.homeIntroContent }}
+<div class="home-intro">
+    <div class="home-intro-content">
+        {{ with .Site.Params.homeIntroTitle }}
+        <h1>{{ . }}</h1>
+        {{ end }}
+
+        {{ with .Site.Params.homeIntroContent }}
+        <p>{{ . | markdownify }}</p>
+        {{ end }}
+
+        {{/* Social Icons */}}
+        {{ with site.Params.social }}
+        <div class="social-icons">
+            {{- range . }}
+            <a href="{{ trim .url " " | safeURL }}" target="_blank"
+                rel="noopener noreferrer me"
+                title="{{ (.title | default .name) | title }}">
+                {{ partial "svg.html" . }}
+            </a>
+            {{- end }}
+        </div>
+        {{ end }}
+    </div>
+
+    <img src="/sara_headshot.png" alt="Sara Perestrelo" class="home-image" id="rotating-image">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const image = document.getElementById('rotating-image');
+    const maxRotation = 15; // Increased from 5 to 15 degrees
+    const perspective = 800; // Added perspective control
+
+    document.addEventListener('mousemove', function(e) {
+        if (!image) return;
+
+        // Get image position
+        const rect = image.getBoundingClientRect();
+        const imageX = rect.left + rect.width / 2;
+        const imageY = rect.top + rect.height / 2;
+
+        // Calculate angle between cursor and image center
+        const deltaX = e.clientX - imageX;
+        const deltaY = e.clientY - imageY;
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+        
+        // Increased sensitivity by reducing maxDistance
+        const maxDistance = 300; // Reduced from 500 to 300 for more sensitivity
+        if (distance < maxDistance) {
+            const rotateX = (deltaY / maxDistance) * maxRotation;
+            const rotateY = -(deltaX / maxDistance) * maxRotation;
+            
+            // Added scale effect on movement
+            const scale = 1.05 - (distance / maxDistance) * 0.05;
+            
+            image.style.transform = `
+                perspective(${perspective}px) 
+                rotateX(${rotateX}deg) 
+                rotateY(${rotateY}deg)
+                scale(${scale})
+            `;
+            image.style.transition = 'transform 0.15s ease-out'; // Made transition slightly faster
+        } else {
+            image.style.transform = 'perspective(${perspective}px) rotateX(0) rotateY(0) scale(1)';
+        }
+    });
+
+    // Reset rotation when mouse leaves the window
+    document.addEventListener('mouseleave', function() {
+        if (image) {
+            image.style.transform = 'perspective(${perspective}px) rotateX(0) rotateY(0) scale(1)';
+            image.style.transition = 'transform 0.3s ease-out';
+        }
+    });
+});
+</script>
+{{ end }}
+
+{{/* Collection Section */}}
+
+{{ if .Site.Params.homeCollection }}
+
+<div class="list-container">
+    {{ with .Site.Params.homeCollectionTitle}}
+    <h1> {{ . }} </h1>
+    {{ end }}
+
+    {{ $pages := where .Site.RegularPages "Section" .Site.Params.homeCollection }}
+
+    {{ $paginationSize := 1}}
+    {{ if (gt .Site.Params.paginationSize 0) }}
+    {{ $paginationSize = .Site.Params.paginationSize }}
+    {{ end }}
+
+    {{ $paginator := .Paginate $pages $paginationSize }}
+
+    {{ range $index, $page := $paginator.Pages }}
+    {{ partial "post-entry.html" $page}}
+    {{ end }}
+
+    {{ partial "pagination-controls.html" $paginator}}
+
+    {{ end }}
+</div>
+
+{{ end }}
