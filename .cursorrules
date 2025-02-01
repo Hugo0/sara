@@ -1,0 +1,27 @@
+This is a blog for Sara Perestrelo. It uses Hugo and Giscus for comments section.
+Blog is deployed on Render.
+
+IMPORTANT CONTEXT:
+1. Bilingual Support:
+   - Blog posts can be in English and Portuguese
+   - Use index.en.md and index.pt.md in the same folder for bilingual posts
+   - Single language posts use just index.md
+   - Language switcher is implemented in the theme
+
+2. Comments System:
+   - Uses Giscus with "specific" mapping
+   - Each post needs a unique giscus_term in frontmatter
+   - Bilingual versions of the same post share the same giscus_term to keep comments synced
+   - Format: "post-name-YYYYMMDD"
+
+3. Theme Customizations:
+   - Using Typo theme
+   - Custom language switcher implementation
+   - Custom post spacing and styling
+   - Disable fast rebuilds when changing templates to ensure proper updates
+
+4. Content Structure:
+   - Main site UI is in English
+   - Only blog posts can be bilingual
+   - Posts are in content/posts/ directory
+   - Each bilingual post has its own directory with language-specific files
