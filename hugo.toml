@@ -15,7 +15,11 @@ theme = 'Typo'
 tag = 'tags'
 
 # Google analytics code
-googleAnalytics = "G-N09T510QBN"
+# googleAnalytics = "G-N09T510QBN"  # removing old format
+
+[services]
+  [services.googleAnalytics]
+    ID = "G-N09T510QBN"
 
 [params]
 # Meta description
