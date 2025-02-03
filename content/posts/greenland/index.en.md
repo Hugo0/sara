@@ -39,7 +39,7 @@ Greenland is attractive to the U.S. for both its strategic location and natural 
 
 Mining in Greenland is on the rise as global demand increases for rare earth elements, 17 metals crucial to technologies such as consumer electronics, renewable energy systems, and military equipment. Greenland has rich unexploited REE resources, and its ice is melting to reveal these resources due to climate change. China dominates 60% of the total supply of REEs globally and controls 90% of refining, something that has stimulated countries such as the U.S. to seek other sources in Greenland. However, mining faces challenges like environmental concerns, infrastructure needs, and opposition by local communities due to ecological and cultural impacts.
 
-![Ree Interface](ree.png)
+![Ree Interface](REE.png)
 
 Its location is also convenient for military installations, and while the U.S. already operates one air base there, full control over Greenland would provide a big advantage in monitoring activities in the region, especially with growing tensions with China and Russia[^8]. China has made the Polar Silk Road, a component of its larger Belt and Road Initiative, to develop Arctic shipping routes and resources-officially part of its foreign trade policy. It has invested in some Russian projects, including the Yamal LNG, one of the largest natural gas operations, which started in 2017, and Arctic LNG 2, scheduled to start by 2026\. While the West has imposed sanctions that have limited Russia's access to world markets, China has been helping them. Meanwhile, Russia is building up its military presence in the Arctic by reopening Soviet-era bases, building new airfields, radar stations, and icebreaker fleets. 
 
