@@ -1,8 +1,8 @@
-{{ if hugo.IsProduction }} {{ with .Site.GoogleAnalytics }}
+{{ if hugo.IsProduction }} {{ if .Site.Config.Services.GoogleAnalytics.ID }}
 <!-- Google tag (gtag.js) -->
 <script
   async
-  src="https://www.googletagmanager.com/gtag/js?id={{ . }}"
+  src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"
 ></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,7 +10,6 @@
     dataLayer.push(arguments);
   }
   gtag("js", new Date());
-
-  gtag("config", "{{ . }}");
+  gtag("config", "{{ .Site.Config.Services.GoogleAnalytics.ID }}");
 </script>
 {{ end }} {{ end }}

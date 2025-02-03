@@ -29,7 +29,7 @@ Thumbs.db
 *.swo
 *~
 
-# Node modules (if you're using any Node.js-based tools)
+# Node modules 
 node_modules/
 
 # Log files
@@ -37,9 +37,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Hugo theme components (if you're using git submodules for themes)
-/themes/**/*
-!/themes/Typo/
 
 # Misc
 *.log
