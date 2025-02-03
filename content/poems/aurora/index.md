@@ -7,12 +7,4 @@ language = 'pt'  # To indicate this poem is in Portuguese
 giscus_term = "aurora-20240317"
 +++
 
-Na calma da aurora  
-Onde sombras persistem  
-Me encontro agora  
-Em memórias que existem
 
-Como orvalho brilhante  
-Na primeira luz do dia  
-Cada sonho distante  
-Na noite que se esvaía
