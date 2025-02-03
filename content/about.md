@@ -4,8 +4,7 @@ hideBackToTop: true
 ---
 
 # About Me
+I am a law student, but also a writer. Sometimes, the mix gets a bit chaotic. While I should be studying, I often find myself diving into the most random topics (my favourite form of procrastination).
 
-I'm currently a student in law. I love researching outside of my study time, especially how technology reshapes our society. Writing makes me happy.
-
-Here is my cat:
+Here is something else that distracts me:
 ![cat](/images/cat.jpeg)
