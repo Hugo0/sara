@@ -1,7 +1,7 @@
 +++
 title = 'Devagar, devagarinho, devagar'
 date = 2025-03-10
-draft = true
+draft = false
 tags = ['cronicas']
 giscus_term = "crónicas"
 +++
