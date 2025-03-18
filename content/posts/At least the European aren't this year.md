@@ -4,7 +4,6 @@ date = 2025-03-18
 draft = true
 tags = ['Geopolitics']
 giscus_term = "europeans-18032025"
-
 +++
 
 Portugal, my tiny country in Southern Europe, is routinely mistaken for belonging to Spain or for resembling a place where *Harry Potter* could have been recorded*.* However, its political *status quo* has never been peaceful or fun-sized, especially over the past several years. Three legislative elections have been conducted here since 2019, with a fourth due this year. None of our governments has endured for a complete term since then, falling due to internal disputes, corruption scandals and political deadlock.
