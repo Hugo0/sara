@@ -1,7 +1,7 @@
 +++
 title = 'At Least the European Elections Are Not This Year'
 date = 2025-03-18
-draft = true
+draft = false
 tags = ['Geopolitics', 'Europe', 'Portuguese politics',]
 giscus_term = "euelections-20250318"
 +++
