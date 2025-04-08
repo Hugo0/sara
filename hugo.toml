@@ -35,8 +35,7 @@ homeIntroContent = """
 Welcome. My main interests lie at the intersection of law and technology"""
 
 # Collection to display on home
-homeCollectionTitle = 'Posts'
-homeCollection = 'posts'
+homeCollectionTitle = 'All Posts'
 
 # Lists parameters
 paginationSize = 100
