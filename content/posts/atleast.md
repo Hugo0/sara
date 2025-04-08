@@ -6,8 +6,6 @@ tags = ['Geopolitics', 'Europe', 'Portuguese politics',]
 giscus_term = "euelections-20250318"
 +++
 
-**At least the European elections aren’t this year**
-
 Many of you may not know that I come from Portugal, a small country in Southern Europe that’s often mistaken for being part of Spain or for being a location where *Harry Potter* could have been filmed. While its geography might be easy to overlook, its political *status quo* has been anything but fun-sized. In fact, Portugal has held three legislative elections since 2019, with a fourth one coming up this year. That means not a single government has lasted its full term, collapsing due to internal disputes, scandals and political deadlock. The latest crisis involved Prime Minister Luís Montenegro, in office since April 2024, who lost  a vote of confidence on March 11th.
 
 What does all this have to do with the European elections? Well, I’m relieved they aren’t happening this year. With so many national elections back-to-back, voter fatigue is already a major concern. If the European elections were thrown into the mix, they would likely be even more overlooked than usual. And that’s a huge problem. While EU elections consistently see lower turnout than national ones, they are just as important, if not more. Many of the policies that shape our daily lives are decided at the European level.
