@@ -1,0 +1,9 @@
+{{ $showFooter := default true .Site.Params.showFooter }} {{ if $showFooter }}
+{{ if not .Site.Params.footerContent }}
+<p>© {{ now.Format "2006" }} Sara Perestrelo. All rights reserved.</p>
+{{ end }} {{ with .Site.Params.footerContent }}
+<p>{{ . | markdownify }}</p>
+{{ end }} {{ end }} {{ if .Param "math" }} {{ partialCached "math.html" . }} {{
+end }}
+
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="saraperestrelo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#7BA05B" data-position="Right" data-x_margin="18" data-y_margin="18"></script>

@@ -1,0 +1,148 @@
+<style>
+.cam-timeline { margin: 2rem 0; }
+.cam-tl-title { font-weight: 700; font-size: 1.05em; margin-bottom: 1.2rem; }
+.cam-tl-track {
+  position: relative;
+  display: flex;
+  gap: 0;
+}
+/* horizontal line through dots */
+.cam-tl-track::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: #ddd;
+  z-index: 0;
+}
+.cam-tl-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.cam-tl-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  background: white;
+  transition: all 0.2s;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+.cam-tl-step.active .cam-tl-dot,
+.cam-tl-step:hover  .cam-tl-dot {
+  background: #1d3557;
+  border-color: #1d3557;
+  transform: scale(1.25);
+}
+.cam-tl-year {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+.cam-tl-step.active .cam-tl-year,
+.cam-tl-step:hover  .cam-tl-year { opacity: 1; }
+
+.cam-tl-label {
+  font-size: 11.5px;
+  text-align: center;
+  opacity: 0.7;
+  margin-top: 2px;
+  line-height: 1.3;
+  max-width: 90px;
+}
+.cam-tl-panel {
+  margin-top: 1.2rem;
+  padding: 14px 18px;
+  border-left: 3px solid #1d3557;
+  background: rgba(29,53,87,0.04);
+  border-radius: 0 6px 6px 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  display: none;
+}
+.cam-tl-panel.on { display: block; }
+.cam-tl-panel-year  { font-weight: 700; color: #1d3557; font-size: 1.15em; margin-bottom: 3px; }
+.cam-tl-panel-event { font-weight: 600; margin-bottom: 6px; }
+
+@media (max-width: 540px) {
+  .cam-tl-track { flex-direction: column; gap: 4px; }
+  .cam-tl-track::before { display: none; }
+  .cam-tl-step { flex-direction: row; align-items: flex-start; gap: 10px; }
+  .cam-tl-dot  { margin-bottom: 0; margin-top: 3px; }
+  .cam-tl-label { text-align: left; max-width: none; }
+}
+</style>
+
+<div class="cam-timeline">
+  <div class="cam-tl-title">Timeline</div>
+  <div class="cam-tl-track" id="cam-tl-track"></div>
+  <div class="cam-tl-panel" id="cam-tl-panel">
+    <div class="cam-tl-panel-year"  id="cam-tl-panel-year"></div>
+    <div class="cam-tl-panel-event" id="cam-tl-panel-event"></div>
+    <div id="cam-tl-panel-desc"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var events = [
+    { year: '2006', label: 'FOCAC Beijing',
+      event: 'China pledges $5B to Africa',
+      desc: 'At the Forum on China-Africa Cooperation in Beijing, China pledges $5 billion in loans and credits to African countries. The infrastructure-for-resources model — build roads and railways in exchange for mining access — begins to take shape at scale.' },
+    { year: '2011', label: 'Empire of Dust',
+      event: 'Documentary filmed in DRC',
+      desc: 'Laoyang, a Chinese logistics manager, is sent to the DRC to rebuild the Kolwezi–Lubumbashi road. The documentary captures, almost by accident, what would become one of the defining geopolitical dynamics of the decade.' },
+    { year: '2013', label: 'BRI launched',
+      event: 'Belt and Road Initiative announced',
+      desc: 'President Xi Jinping formally announces the Belt and Road Initiative in a speech in Kazakhstan. What had previously been a series of bilateral deals is now formalised as a coherent global strategy: Chinese-financed infrastructure across Asia, Africa and Europe in exchange for trade access and political alignment.' },
+    { year: '2017', label: 'Africa railways',
+      event: 'Kenya SGR + Djibouti military base',
+      desc: 'The Kenya Standard Gauge Railway (Mombasa–Nairobi) opens, built and financed by China at $3.8B. The same year, China opens its first overseas military base in Djibouti — positioned at the entrance to the Red Sea, where roughly 30% of global trade passes. The Ethiopia–Djibouti Railway also opens the year before, in 2016.' },
+    { year: '2021', label: 'Kamoa-Kakula',
+      event: 'World-class copper mine opens',
+      desc: 'Kamoa-Kakula, located near Kolwezi in the DRC — the same region as the documentary — begins production. It is among the highest-grade copper deposits in the world. It is co-owned by Canadian firm Ivanhoe Mines and Chinese firm Zijin Mining, illustrating the mixed-ownership model that now defines the Copperbelt.' },
+    { year: '2023', label: 'US counter-move',
+      event: 'Lobito Corridor + US-DRC SPA',
+      desc: 'The US, EU and G7 announce backing for the Lobito Corridor — a railway from the DRC Copperbelt to the Angolan port of Lobito on the Atlantic coast. The US also signs the Strategic Partnership Agreement (SPA) with the DRC, explicitly targeting critical minerals. Washington is now openly competing with Beijing for Africa\'s subsoil.' }
+  ];
+
+  var track = document.getElementById('cam-tl-track');
+  var panel = document.getElementById('cam-tl-panel');
+  var activeIdx = -1;
+
+  events.forEach(function (ev, i) {
+    var step = document.createElement('div');
+    step.className = 'cam-tl-step';
+    step.innerHTML =
+      '<div class="cam-tl-dot"></div>' +
+      '<div class="cam-tl-year">'  + ev.year  + '</div>' +
+      '<div class="cam-tl-label">' + ev.label + '</div>';
+    step.addEventListener('click', function () {
+      if (activeIdx === i) {
+        /* deselect */
+        step.classList.remove('active');
+        panel.classList.remove('on');
+        activeIdx = -1;
+      } else {
+        track.querySelectorAll('.cam-tl-step').forEach(function (s) { s.classList.remove('active'); });
+        step.classList.add('active');
+        document.getElementById('cam-tl-panel-year').textContent  = ev.year;
+        document.getElementById('cam-tl-panel-event').textContent = ev.event;
+        document.getElementById('cam-tl-panel-desc').textContent  = ev.desc;
+        panel.classList.add('on');
+        activeIdx = i;
+      }
+    });
+    track.appendChild(step);
+  });
+})();
+</script>

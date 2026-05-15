@@ -1,0 +1,76 @@
+<div id="congo-map" style="height: 440px; width: 100%; border-radius: 8px; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"></div>
+
+<script>
+(function () {
+  var css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css';
+  document.head.appendChild(css);
+
+  var script = document.createElement('script');
+  script.src = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js';
+  script.onload = initMap;
+  document.head.appendChild(script);
+
+  function initMap() {
+    var map = L.map('congo-map').setView([-11.2, 25.8], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 18
+    }).addTo(map);
+
+    L.polygon([
+      [-9.2, 23.8], [-9.2, 28.8], [-13.2, 28.8], [-13.2, 23.8]
+    ], {
+      color: '#b5651d', fillColor: '#d4874e', fillOpacity: 0.12,
+      weight: 1.5, dashArray: '6, 4'
+    }).addTo(map).bindTooltip('Congolese Copperbelt', { sticky: true });
+
+    L.polyline([
+      [-10.717, 25.467], [-10.850, 25.900], [-10.983, 26.733], [-11.667, 27.467]
+    ], {
+      color: '#e63946', weight: 3.5, opacity: 0.9
+    }).addTo(map).bindTooltip('Kolwezi – Lubumbashi Road (N1)', { sticky: true });
+
+    L.polyline([
+      [-12.350, 13.550], [-11.900, 17.500], [-11.400, 21.000], [-10.717, 25.467]
+    ], {
+      color: '#457b9d', weight: 2.5, opacity: 0.75, dashArray: '10, 6'
+    }).addTo(map).bindTooltip('Lobito Corridor', { sticky: true });
+
+    function dot(color) {
+      return L.divIcon({
+        className: '',
+        html: '<div style="width:12px;height:12px;background:' + color + ';border:2px solid white;border-radius:50%;box-shadow:0 0 5px rgba(0,0,0,0.35)"></div>',
+        iconSize: [12, 12], iconAnchor: [6, 6]
+      });
+    }
+
+    L.marker([-10.717, 25.467], { icon: dot('#1d3557') }).addTo(map)
+      .bindPopup('<strong>Kolwezi</strong><br>Major mining hub. Starting point of the road rebuilt in the documentary.');
+    L.marker([-11.667, 27.467], { icon: dot('#1d3557') }).addTo(map)
+      .bindPopup('<strong>Lubumbashi</strong><br>Economic capital of the Copperbelt. Main export gateway for DRC minerals.');
+    L.marker([-10.800, 25.050], { icon: dot('#2a9d8f') }).addTo(map)
+      .bindPopup('<strong>Kamoa-Kakula</strong><br>One of the largest copper deposits ever discovered. Operated by Ivanhoe Mines and Zijin Mining (China).');
+    L.marker([-10.983, 26.733], { icon: dot('#1d3557') }).addTo(map)
+      .bindPopup('<strong>Likasi</strong><br>Industrial city midway on the Kolwezi–Lubumbashi road.');
+    L.marker([-12.350, 13.550], { icon: dot('#457b9d') }).addTo(map)
+      .bindPopup('<strong>Lobito, Angola</strong><br>Atlantic port and western terminus of the Lobito Corridor — a US and EU-backed railway alternative to Chinese infrastructure.');
+
+    var legend = L.control({ position: 'bottomright' });
+    legend.onAdd = function () {
+      var div = L.DomUtil.create('div');
+      div.style.cssText = 'background:rgba(255,255,255,0.92);padding:10px 14px;border-radius:6px;font-size:12px;line-height:2;box-shadow:0 1px 6px rgba(0,0,0,0.2)';
+      div.innerHTML =
+        '<strong style="display:block;margin-bottom:2px">Legend</strong>' +
+        '<span style="color:#e63946">—</span> Kolwezi – Lubumbashi Road<br>' +
+        '<span style="color:#457b9d">- -</span> Lobito Corridor<br>' +
+        '<span style="color:#d4874e">▭</span> Copperbelt Region<br>' +
+        '<span style="color:#1d3557">●</span> Cities &nbsp;<span style="color:#2a9d8f">●</span> Mining';
+      return div;
+    };
+    legend.addTo(map);
+  }
+})();
+</script>
