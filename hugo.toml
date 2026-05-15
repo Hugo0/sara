@@ -80,6 +80,10 @@ name = "poems"
 url = "/poems"
 
 [[params.menu]]
+name = "reviews"
+url = "/reviews"
+
+[[params.menu]]
 name = "about"
 url = "/about"
 
