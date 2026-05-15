@@ -30,7 +30,7 @@ theme = 'auto'
 favicon = "/favicon.svg"
 
 # Intro on main page, content is markdown
-homeIntroTitle = 'Hi!'
+homeIntroTitle = 'Salve'
 homeIntroContent = ""
 
 # Collection to display on home
