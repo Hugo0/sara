@@ -12,7 +12,7 @@ Recently, I watched a documentary called "Empire of Dust". The film documented t
 
 {{< congo-map >}}
 
-<p style="font-size: 0.82em; opacity: 0.55; text-align: center; margin-top: -1.8rem; margin-bottom: 2.5rem;">The road rebuilt in the documentary (Kolwezi – Lubumbashi, red), the Congolese Copperbelt region, and the Lobito Corridor (blue dashed).</p>
+<p style="font-size: 0.82em; opacity: 0.55; text-align: center; margin-top: -1.8rem; margin-bottom: 2.5rem;">This map highlights the critical infrastructure featured in the documentary.</p>
 
 However, after some brief research, I understood the logic behind his presence there. The documentary dates back to 2011, a time when most nations were seeking oil and gas and China was smartly looking elsewhere. In this case, the Chinese government was signing protocols with RDC in order to obtain mineral resources. The deals were structured in kind: Chinese companies would build infrastructure in exchange for access and exploration to the subsoil. Beijing spread these type of arrangements in the continent, and later formalised them as the Belt and Road Initiative.
 
@@ -46,7 +46,7 @@ However, after some brief research, I understood the logic behind his presence t
 
 <div class="key-concepts">
 <p class="kc-title">Key Concepts</p>
-<p class="kc-intro">Terms and context that come up in the documentary — for those who want to go a bit deeper.</p>
+<p class="kc-intro">I will leave deeper context and nuanced vocabulary you'll encounter in advanced study.</p>
 
 <details>
 <summary>The Belt and Road Initiative (BRI)</summary>
