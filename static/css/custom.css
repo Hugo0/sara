@@ -30,6 +30,26 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 2.5rem !important;
 }
 
+/* ── Mobile nav fix ─────────────────────────────────────── */
+.header .flex {
+  flex-wrap: wrap;
+}
+
+.header .flex p {
+  white-space: nowrap;
+}
+
+/* Breadcrumbs: don't break mid-word */
+.breadcrumbs {
+  flex-wrap: wrap;
+  word-break: keep-all;
+}
+
+.breadcrumbs a,
+.breadcrumbs span {
+  white-space: nowrap;
+}
+
 /* ── Reviews accordion ──────────────────────────────────── */
 details.list-container > .reviews-section-title,
 details > summary.reviews-section-title {
