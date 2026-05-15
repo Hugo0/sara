@@ -12,18 +12,21 @@ Recently, I watched a documentary called "Empire of Dust". The film documented t
 
 {{< congo-map >}}
 
+<p style="font-size: 0.82em; opacity: 0.55; text-align: center; margin-top: -1.8rem; margin-bottom: 2.5rem;">The road rebuilt in the documentary (Kolwezi – Lubumbashi, red), the Congolese Copperbelt region, and the Lobito Corridor (blue dashed).</p>
+
 However, after some brief research, I understood the logic behind his presence there. The documentary dates back to 2011, a time when most nations were seeking oil and gas and China was smartly looking elsewhere. In this case, the Chinese government was signing protocols with RDC in order to obtain mineral resources. The deals were structured in kind: Chinese companies would build infrastructure in exchange for access and exploration to the subsoil. Beijing spread these type of arrangements in the continent, and later formalised them as the Belt and Road Initiative.
 
 ---
 
 <style>
 .key-concepts { margin: 2rem 0; }
-.key-concepts > p { font-weight: 600; font-size: 1.05em; margin-bottom: 0.75rem; }
-.key-concepts details { border-bottom: 1px solid rgba(128,128,128,0.2); }
+.key-concepts > p.kc-title { font-weight: 600; font-size: 1.05em; margin-bottom: 0.3rem; }
+.key-concepts > p.kc-intro { font-size: 0.85em; opacity: 0.55; margin-bottom: 0.75rem; margin-top: 0; }
+.key-concepts details { border-bottom: 1px solid rgba(128,128,128,0.2); margin: 0; }
 .key-concepts summary {
   cursor: pointer;
   font-weight: 600;
-  padding: 0.5rem 0;
+  padding: 0.35rem 0;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -34,15 +37,16 @@ However, after some brief research, I understood the logic behind his presence t
 .key-concepts summary::after { content: '+'; font-size: 1.2em; }
 .key-concepts details[open] summary::after { content: '−'; }
 .key-concepts details p {
-  margin: 0.5rem 0 0.9rem;
-  font-size: 0.95em;
+  margin: 0.3rem 0 0.6rem;
+  font-size: 0.9em;
   opacity: 0.85;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 </style>
 
 <div class="key-concepts">
-<p>Key Concepts</p>
+<p class="kc-title">Key Concepts</p>
+<p class="kc-intro">Terms and context that come up in the documentary — for those who want to go a bit deeper.</p>
 
 <details>
 <summary>The Belt and Road Initiative (BRI)</summary>
