@@ -8,11 +8,14 @@
 
 <div class="list-container">
   {{ range .Sections }}
-  {{ partial "post-entry.html" . }}
-  {{ end }}
-
-  {{ range .Pages }}
-  {{ partial "post-entry.html" . }}
+  <details open>
+    <summary class="reviews-section-title">{{ .Title }}</summary>
+    <div class="reviews-section-pages">
+      {{ range .Pages }}
+      {{ partial "post-entry.html" . }}
+      {{ end }}
+    </div>
+  </details>
   {{ end }}
 </div>
 

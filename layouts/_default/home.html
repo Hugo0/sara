@@ -33,7 +33,7 @@
     <h1>{{ . }}</h1>
     {{ end }}
 
-    {{ range .Site.RegularPages.ByDate.Reverse }}
+    {{ range (where .Site.Pages "Kind" "page").ByDate.Reverse }}
     {{ partial "post-entry.html" . }}
     {{ end }}
 </div>

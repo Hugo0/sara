@@ -29,3 +29,42 @@ h1, h2, h3, h4, h5, h6,
   margin-top: 2.5rem !important;
   margin-bottom: 2.5rem !important;
 }
+
+/* ── Reviews accordion ──────────────────────────────────── */
+details.list-container > .reviews-section-title,
+details > summary.reviews-section-title {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid currentColor;
+  opacity: 0.85;
+}
+
+details > summary.reviews-section-title::-webkit-details-marker {
+  display: none;
+}
+
+details > summary.reviews-section-title::before {
+  content: '▾ ';
+  font-size: 0.9em;
+}
+
+details[open] > summary.reviews-section-title::before {
+  content: '▾ ';
+}
+
+details:not([open]) > summary.reviews-section-title::before {
+  content: '▸ ';
+}
+
+details {
+  margin-bottom: 2rem;
+}
+
+.reviews-section-pages {
+  padding-left: 0.5rem;
+}
