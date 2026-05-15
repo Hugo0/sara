@@ -31,8 +31,7 @@ favicon = "/favicon.svg"
 
 # Intro on main page, content is markdown
 homeIntroTitle = 'Hi!'
-homeIntroContent = """
-Welcome. My main interests lie at the intersection of law and technology"""
+homeIntroContent = ""
 
 # Collection to display on home
 homeCollectionTitle = 'All Posts'
