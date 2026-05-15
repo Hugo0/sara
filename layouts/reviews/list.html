@@ -1,0 +1,54 @@
+{{ define "main" }}
+
+{{ partial "breadcrumbs.html" . }}
+
+<div class="single-intro-container">
+  <h1 class="single-title">{{ .Title }}</h1>
+</div>
+
+<style>
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+.reviews-card {
+  display: block;
+  padding: 1.8rem 1.4rem;
+  border: 1px solid rgba(128,128,128,0.25);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.15s;
+  text-align: center;
+}
+.reviews-card:hover {
+  border-color: currentColor;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.reviews-card-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+.reviews-card-title { font-weight: 600; font-size: 1.05rem; }
+.reviews-card-count { font-size: 0.82rem; opacity: 0.5; margin-top: 0.3rem; }
+</style>
+
+<div class="reviews-grid">
+  {{ range .Sections }}
+  <a href="{{ .Permalink }}" class="reviews-card">
+    <div class="reviews-card-icon">
+      {{ if eq .Title "Screen" }}🎬
+      {{ else if eq .Title "Books" }}📚
+      {{ else if eq .Title "Events" }}🎟
+      {{ else }}📝
+      {{ end }}
+    </div>
+    <div class="reviews-card-title">{{ .Title }}</div>
+    <div class="reviews-card-count">
+      {{ len .Pages }}
+      {{ if eq (len .Pages) 1 }}review{{ else }}reviews{{ end }}
+    </div>
+  </a>
+  {{ end }}
+</div>
+
+{{ end }}
